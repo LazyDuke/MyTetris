@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lazyduke.mytetris2.control.GameControl;
 
@@ -164,16 +165,22 @@ public class MainActivity extends Activity implements OnClickListener, OnLongCli
     }
 
     /**按back不退出*/
-    public boolean dispatchKeyEvent(KeyEvent event) {
-        // menuUtils.createTwoDispatcher(event);
-        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-            Intent intent = new Intent();
-            intent.setAction("android.intent.action.MAIN");
-            intent.addCategory("android.intent.category.HOME");
-            startActivity(intent);
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+
+            if ((System.currentTimeMillis() - Config.EXITTIME) > 2000)  //System.currentTimeMillis()无论何时调用，肯定大于2000
+            {
+                Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                Config.EXITTIME = System.currentTimeMillis();
+            } else {
+                finish();
+                System.exit(0);
+            }
+            return true;
         }
-        return false;
+        return super.onKeyDown(keyCode, event);
     }
+
 
     //将dp转换为px
     public static int dp2px(Context context, float dpValue) {

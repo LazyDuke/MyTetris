@@ -23,4 +23,7 @@ public class Config {
     //间距
     public static int PADDING;
 
+    //退出时间
+    public static long EXITTIME=0;
+
 }
