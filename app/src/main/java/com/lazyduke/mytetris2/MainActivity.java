@@ -164,7 +164,7 @@ public class MainActivity extends Activity implements OnClickListener, OnLongCli
         findViewById(R.id.btnPause).setOnClickListener(this);
     }
 
-    /**按back不退出*/
+    /**按两下back退出*/
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
 
