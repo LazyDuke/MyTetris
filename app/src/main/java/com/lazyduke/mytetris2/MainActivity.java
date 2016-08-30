@@ -3,7 +3,6 @@ package com.lazyduke.mytetris2;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,7 +22,7 @@ import com.lazyduke.mytetris2.control.GameControl;
 
 public class MainActivity extends Activity implements OnClickListener, OnLongClickListener {
 
-    //view没有变量、数据
+
     // 游戏区域控件
     View gamePanel;
 
