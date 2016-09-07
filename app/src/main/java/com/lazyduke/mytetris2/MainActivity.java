@@ -23,7 +23,7 @@ import com.lazyduke.mytetris2.control.GameControl;
 
 public class MainActivity extends Activity implements OnClickListener, OnLongClickListener {
 
-    //view没有变量、数据
+
     // 游戏区域控件
     View gamePanel;
 
@@ -71,9 +71,13 @@ public class MainActivity extends Activity implements OnClickListener, OnLongCli
         gameControl=new GameControl(handler,this);
         initView();
         initListener();
-
+        Button start=(Button)findViewById(R.id.btnStart);
         //加载本地储存数据
         gameControl.scoreModel.showBestSco(this,bestSco);
+        Intent intent=getIntent();
+        if (intent.getBooleanExtra("go",true)){
+            start.performClick();
+        }
     }
 
     /** 初始化视图 */
@@ -164,7 +168,7 @@ public class MainActivity extends Activity implements OnClickListener, OnLongCli
         findViewById(R.id.btnPause).setOnClickListener(this);
     }
 
-    /**按back不退出*/
+    /**按两下back退出*/
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
 
