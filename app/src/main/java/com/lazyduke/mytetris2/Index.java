@@ -28,6 +28,7 @@ public class Index extends Activity {
         public void onClick(View view) {
             Intent intent=new Intent();
             intent.setClass(Index.this,MainActivity.class);
+            intent.putExtra("go",true);
             startActivity(intent);
             finish();
         }

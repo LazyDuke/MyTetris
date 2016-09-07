@@ -3,6 +3,7 @@ package com.lazyduke.mytetris2;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.Handler;
@@ -70,9 +71,13 @@ public class MainActivity extends Activity implements OnClickListener, OnLongCli
         gameControl=new GameControl(handler,this);
         initView();
         initListener();
-
+        Button start=(Button)findViewById(R.id.btnStart);
         //加载本地储存数据
         gameControl.scoreModel.showBestSco(this,bestSco);
+        Intent intent=getIntent();
+        if (intent.getBooleanExtra("go",true)){
+            start.performClick();
+        }
     }
 
     /** 初始化视图 */
