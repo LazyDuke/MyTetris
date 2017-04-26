@@ -5,7 +5,6 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import java.util.Random;
 
-import com.lazyduke.mytetris2.Config;
 /**
  * Created by Lenovo on 2016/8/15.
  */

@@ -1,4 +1,4 @@
-package com.lazyduke.mytetris2;
+package com.lazyduke.mytetris2.model;
 
 /**
  * Created by Lenovo on 2016/8/16.

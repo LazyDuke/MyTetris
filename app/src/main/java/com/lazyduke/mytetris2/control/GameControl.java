@@ -7,7 +7,7 @@ import android.os.Message;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
-import com.lazyduke.mytetris2.Config;
+import com.lazyduke.mytetris2.model.Config;
 import com.lazyduke.mytetris2.R;
 import com.lazyduke.mytetris2.model.CubesModel;
 import com.lazyduke.mytetris2.model.MapsModel;
