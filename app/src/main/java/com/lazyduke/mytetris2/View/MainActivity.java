@@ -1,4 +1,4 @@
-package com.lazyduke.mytetris2;
+package com.lazyduke.mytetris2.View;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -19,6 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lazyduke.mytetris2.model.Config;
+import com.lazyduke.mytetris2.R;
 import com.lazyduke.mytetris2.control.GameControl;
 
 public class MainActivity extends Activity implements OnClickListener, OnLongClickListener {
@@ -186,7 +188,7 @@ public class MainActivity extends Activity implements OnClickListener, OnLongCli
     }
 
 
-    //将dp转换为px
+    /**将dp转换为px*/
     public static int dp2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);

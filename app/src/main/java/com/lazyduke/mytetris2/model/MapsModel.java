@@ -3,8 +3,6 @@ package com.lazyduke.mytetris2.model;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import com.lazyduke.mytetris2.Config;
-
 /**
  * Created by Lenovo on 2016/8/15.
  */
@@ -77,13 +75,13 @@ public class MapsModel {
 
         // 竖线
         for (int x = 0; x <= maps.length; x++) {
-            // canvas.drawLine(startX, startY, stopX, stopY, paint);
+
             canvas.drawLine(x * cubeSize, 0, x * cubeSize,yHeight, linePaint);
         }
 
         // 横线
         for (int y = 0; y <= maps[0].length; y++) {
-            // canvas.drawLine(startX, startY, stopX, stopY, paint);
+
             canvas.drawLine(0, y * cubeSize, xWidth, y * cubeSize, linePaint);
         }
     }
